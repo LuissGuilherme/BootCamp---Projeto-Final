@@ -1,0 +1,168 @@
+/* --- Estilos Globais e Padrões --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6; /* Um cinza claro suave */
+    color: #333;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Header --- */
+header {
+    background-color: #4b19de; /* Cor do seu manifest */
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* --- Container Principal (#app) --- */
+main#app {
+    max-width: 900px;
+    margin: 2rem auto; /* Centraliza na página */
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Caixa de Busca --- */
+.search-box {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    gap: 10px; /* Espaço entre o input e o botão */
+    margin-bottom: 1rem;
+}
+
+#country-search {
+    flex: 1 1 300px; /* Permite crescer e encolher, com base de 300px */
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#btn-search {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #4b19de; /* Cor do tema */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#btn-search:hover {
+    background-color: #3a12a3; /* Tom mais escuro */
+}
+
+/* --- Opções de Busca (Rádio) --- */
+.search-options {
+    display: flex;
+    gap: 20px; /* Espaço entre as opções */
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.search-options label {
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.search-options input[type="radio"] {
+    margin-right: 5px;
+    /* Melhora a aparência do rádio */
+    accent-color: #4b19de;
+}
+
+/* --- Conteúdo Dinâmico (#content) --- */
+#content {
+    margin-top: 1.5rem;
+}
+
+/* --- Estilo para Mensagens (Carregando, Erro, Boas-vindas) --- */
+#content p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    padding: 1rem;
+}
+
+/* Estilo específico para mensagens de erro */
+p.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #D8000C;
+    border-radius: 4px;
+}
+
+
+/* --- Detalhes do País (Onde a mágica acontece) --- */
+.country-detail {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.country-detail h2 {
+    color: #4b19de;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.country-detail img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    /* O JS define width="150", mas garantimos que não ultrapasse */
+    max-width: 150px; 
+}
+
+/* Estiliza todos os parágrafos de detalhes (Moeda, População, etc.) */
+.country-detail p {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: left; /* Sobrescreve o 'text-align: center' genérico */
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.country-detail p:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+/* Dá destaque ao "label" (Ex: "População:") */
+.country-detail p strong {
+    color: #111;
+    margin-right: 8px; /* Espaço entre "População:" e o número */
+    min-width: 100px;
+    display: inline-block; /* Garante que o 'min-width' funcione */
+}
